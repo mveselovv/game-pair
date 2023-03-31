@@ -1,0 +1,144 @@
+* {
+	padding: 0;
+	margin: 0;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	background: #222;
+	margin: 0;
+	padding: 0;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.app {
+	padding: 20px 100px;
+}
+
+.app__title {
+	font-size: 45px;
+	text-align: center;
+	font-weight: bold;
+	color: orange;
+	padding-bottom: 20px;
+	border-bottom: 4px solid orange;
+}
+
+
+.main {
+	position: relative;
+	height: 100vh;
+}
+
+.none {
+	display: none;
+}
+
+.game__pair {
+	position: relative;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	margin: 0 auto;
+	align-items: center;
+	width: 800px;
+	height: 640px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-webkit-perspective: 1000px;
+	perspective: 1000px;
+}
+
+.game__card {
+	position: relative;
+	padding:0;
+	width: calc(25% - 10px);
+	height: calc(33.333% - 10px);
+	margin: 5px;
+	border: 2px solid #222222;
+	border-radius: 10px;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transition: -webkit-transform .5s;
+	transition: -webkit-transform .5s;
+	transition: transform .5s;
+	transition: transform .5s, -webkit-transform .5s;
+}
+
+.game__card:active {
+	-webkit-transform: scale(0.97);
+	transform: scale(0.97);
+	-webkit-transition: -webkit-transform .2s ease-in-out;
+	transition: -webkit-transform .2s ease-in-out;
+	transition: transform .2s ease-in-out;
+	transition: transform .2s ease-in-out, -webkit-transform .2s ease-in-out;
+}
+
+.game__card.transform {
+	-webkit-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+}
+
+.game__card.success {
+	border: 2px solid greenyellow;
+	-webkit-transition: all .5s;
+	transition: all .5s;
+	border-radius: 13px;
+}
+
+.game__face, .game__backface {
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+	position: absolute;
+	border-radius: 5px;
+	user-select: none;
+	pointer-events: none;
+	background: #ffa600;
+	border-radius: 10px;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.game__face img, .game__backface img {
+	width: 100%;
+}
+
+.game__backface {
+	-webkit-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+}
+
+.button__restart {
+	position: absolute;
+	top: 56%;
+	left: -50%;
+	display: block;
+	cursor: pointer;
+	font-family: inherit;
+	margin: 0 auto;
+	padding: 15px 30px;
+	font-size: 20px;
+	font-weight: 600;
+	border-radius: 10px;
+	background-color: #ffa600;
+	border: 2px solid #000;
+	transition: background-color .2s ease-in-out;
+}
+
+.button__restart:hover {
+	background-color: #fdb837;
+}
+
+.count__span {
+	position: absolute;
+	top: 50%;
+	left: -50%;
+	font-size: 20px;
+	color: #fff;
+}
